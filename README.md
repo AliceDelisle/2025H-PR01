@@ -61,8 +61,12 @@ Par la suite, vous devez implémenter le mouvement de la balle dans une directio
 Ici, vous devez redéfinir la position de la balle pour qu'elle soit centrée en x (c'est-à-dire, sur la ligne pointillée). Sa position en y doit toutefois être aléatoire, permettant à la balle de commencer à un point quelconque sur la ligne pointillée après chaque point. 
 
 #### 2.2 : Réinitialisation de la position de la balle en y 
-Si le joueur 2 a gagné un point, relancer la balle de son côté (à la gauche) avec une direction aléatoire en y (par en haut ou par en bas).
-Si le joueur 1 a gagné un point, relancer la balle de son côté (à la droite) avec une direction aléatoire en y (par en haut ou par en bas).
+~~Si le joueur 2 a gagné un point, relancer la balle de son côté (à la gauche) avec une direction aléatoire en y (par en haut ou par en bas).~~
+~~Si le joueur 1 a gagné un point, relancer la balle de son côté (à la droite) avec une direction aléatoire en y (par en haut ou par en bas).~~
+
+:heavy_exclamation_mark: **Correction** :  
+:red_circle: Si le joueur 2 a gagné un point, relancer la balle de son côté (à la droite) avec une direction aléatoire en y (par en haut ou par en bas).
+:red_circle: Si le joueur 1 a gagné un point, relancer la balle de son côté (à la gauche) avec une direction aléatoire en y (par en haut ou par en bas).
 
 ### Partie 3 : Fonction `play_game`
 *Les sections suivantes sont à réaliser à l'intérieur de la fonction `play_game` à l'intérieur du fichier `game.py`. C'est cette fonction qui lance et gère la logique du jeu.*
@@ -85,8 +89,12 @@ Le mouvement de la raquette du joueur 2 doit être contrôlé par les flèches `
      - Si la position y de la balle est supérieure au centre de la raquette, la raquette doit descendre.
 
 - Afin de rendre les mouvements de l'adversaire un peu plus vraisemblables, vous devez également ajouter une variable nommée `margin` à la position du centre de la raquette. De cette façon, le centre de la raquette de l'adversaire suivra le mouvement de la balle, mais avec un léger décalage. La valeur de la variable `margin` doit varier de façon aléatoire, c'est-à-dire : 
-     - 90% du temps, "margin" doit être égale à 40
-     - 10% du temps, "margin" doit être égale à 20
+     ~~- 90% du temps, "margin" doit être égale à 40~~
+     ~~- 10% du temps, "margin" doit être égale à 20~~
+
+:heavy_exclamation_mark: **Correction** :  
+   :red_circle: - 90% du temps, "margin" doit être égale à 20</span>  
+   :red_circle: - 10% du temps, "margin" doit être égale à 40</span>
 
 - Adaptez la vitesse de déplacement de la raquette du joueur 2 selon le niveau de difficulté sélectionné dans le menu "SELECT DIFFICULTY" :
      - Pour le niveau "easy", la vitesse de déplacement de la raquette doit être égale à `paddle_speed - 5`
