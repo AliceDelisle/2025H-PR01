@@ -21,10 +21,12 @@ ball_x = SCREEN_WIDTH // 2 # Remplacer "0" par votre réponse
 ball_y = SCREEN_HEIGHT // 2 # Remplacer "0" par votre réponse
  
 # TODO : INITIALISATION DU MOUVEMENT ALÉATOIRE DE LA BALLE
-# Ici, vous devez implémenter le mouvement de la balle dans une direction aléatoire (en x et en y), en définissant les vecteurs de vitesse de la balle, 
-# c'est-à-dire les variables ball_velocity_x et ball_velocity_y. Pour ce faire, vous devez utiliser les vitesses BALL_SPEED_X et BALL_SPEED_Y définies dans le fichier config.py
-ball_velocity_x = 0 # Remplacer "0" par votre réponse
-ball_velocity_y = 0 # Remplacer "0" par votre réponse
+# Ici, vous devez implémenter le mouvement de la balle dans une direction aléatoire (en x et en y), en définissant les 
+# vecteurs de vitesse de la balle, 
+# c'est-à-dire les variables ball_velocity_x et ball_velocity_y. Pour ce faire, vous devez utiliser les vitesses 
+# BALL_SPEED_X et BALL_SPEED_Y définies dans le fichier config.py
+ball_velocity_x = random([-BALL_SPEED_X,BALL_SPEED_X]) # Remplacer "0" par votre réponse
+ball_velocity_y = random([-BALL_SPEED_Y,BALL_SPEED_Y]) # Remplacer "0" par votre réponse
 
 # Boucle du jeu
 while True:
