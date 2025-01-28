@@ -22,18 +22,23 @@ def reset_ball(ball_x, ball_y, ball_velocity_x, ball_velocity_y):
     
     # TODO : RÉINITIALISER LA POSITION DE LA BALLE AU CENTRE DU JEU
     # Ici, vous devez redéfinir la position de la balle pour qu'elle soit au centre de la fenêtre du jeu en x (c'est-à-dire, sur la ligne pointillée)
-    ball_x = SCREEN_WIDTH // 2
-    ball_y = random(0, SCREEN_HEIGHT)
+    if player1_score or player2_score
+        ball_x = SCREEN_WIDTH // 2
+        ball_y = random(0, SCREEN_HEIGHT)
 
     # TODO : LANCEMENT DE LA BALLE APRÈS RÉINITIALISATION
     # Si le joueur 2 a gagné un point, relancer la balle de son côté (à la gauche) avec une position aléatoire en y 
     # (par en haut ou par en bas), à partir de la ligne pointillée
     # Si le joueur 1 a gagné un point, relancer la balle de son côté (à la droite) avec une position aléatoire en y 
     # (par en haut ou par en bas), à partir de la ligne pointillée
-    if player1_score += 1:
-        ball_velocity_x = BALL_SPEED_X
+    if player1_score:
+        ball_x = - ball_velocity_x
+        ball_y = random(0,ball_velocity_y)
+                        
+    else:
+        ball_x = ball_velocity_x
+        ball_y = random(0,ball_velocity_y)                    
         
-
 
     return ball_x, ball_y, ball_velocity_x, ball_velocity_y
 
