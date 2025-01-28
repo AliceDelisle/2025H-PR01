@@ -1,4 +1,4 @@
-import random
+
 
 # Dimensions de l'écran
 SCREEN_WIDTH = 800

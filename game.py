@@ -30,7 +30,8 @@ def reset_ball(ball_x, ball_y, ball_velocity_x, ball_velocity_y):
     # (par en haut ou par en bas), à partir de la ligne pointillée
     # Si le joueur 1 a gagné un point, relancer la balle de son côté (à la droite) avec une position aléatoire en y 
     # (par en haut ou par en bas), à partir de la ligne pointillée
-    if player1_score > player2_score:
+    if player1_score += 1:
+        ball_velocity_x = BALL_SPEED_X
         
 
 
