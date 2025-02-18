@@ -35,7 +35,7 @@ def reset_ball(ball_x, ball_y, ball_velocity_x, ball_velocity_y):
     else:
         ball_velocity_x = BALL_SPEED_X
 
-    ball_velocity_y = random([-BALL_SPEED_Y, BALL_SPEED_Y])                    
+    ball_velocity_y = random.choice([-BALL_SPEED_Y, BALL_SPEED_Y])                    
         
 
     return ball_x, ball_y, ball_velocity_x, ball_velocity_y
@@ -100,6 +100,8 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
             if keys[pygame.K_DOWN] and player2_y < SCREEN_HEIGHT - PADDLE_HEIGHT:
                 player2_y += paddle_speed
 
+        if paddle_speed > SCREEN_HEIGHT - PADDLE_HEIGHT:
+            paddle_speed = SCREEN_HEIGHT - PADDLE_HEIGHT
 
         # TODO : IMPLÉMENTATION DU MOUVEMENT DES RAQUETTES POUR L'OPTION "SINGLE PLAYER"
         #
@@ -126,7 +128,7 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
         #     - Pour le niveau "medium", la vitesse de déplacement de la raquette doit être égale à "paddle_speed - 4"
         #     - Pour le niveau "hard", la vitesse de déplacement de la raquette doit être égale à "paddle_speed"
 
-        margin = 20 if random() < 0.1 else 40
+        margin = 20 if random.random() < 0.1 else 40
         if ball_y < player2_y + PADDLE_HEIGHT // 2 - margin:
             player2_y -= paddle_speed if difficulty == 'hard' else paddle_speed - 4 if difficulty == 'medium' else paddle_speed - 5
         if ball_y > player2_y + PADDLE_HEIGHT // 2 + margin:
