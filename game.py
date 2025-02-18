@@ -23,7 +23,7 @@ def reset_ball(ball_x, ball_y, ball_velocity_x, ball_velocity_y):
     # TODO : RÉINITIALISER LA POSITION DE LA BALLE AU CENTRE DU JEU
     # Ici, vous devez redéfinir la position de la balle pour qu'elle soit au centre de la fenêtre du jeu en x (c'est-à-dire, sur la ligne pointillée)
     ball_x = SCREEN_WIDTH // 2
-    ball_y = random(0, SCREEN_HEIGHT)
+    ball_y = random.randint(0, SCREEN_HEIGHT)
 
     # TODO : LANCEMENT DE LA BALLE APRÈS RÉINITIALISATION
     # Si le joueur 2 a gagné un point, relancer la balle de son côté (à la gauche) avec une position aléatoire en y 
@@ -100,8 +100,8 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
             if keys[pygame.K_DOWN] and player2_y < SCREEN_HEIGHT - PADDLE_HEIGHT:
                 player2_y += paddle_speed
 
-        if paddle_speed > SCREEN_HEIGHT - PADDLE_HEIGHT:
-            paddle_speed = SCREEN_HEIGHT - PADDLE_HEIGHT
+            if paddle_speed > SCREEN_HEIGHT - PADDLE_HEIGHT:
+                paddle_speed = SCREEN_HEIGHT - PADDLE_HEIGHT
 
         # TODO : IMPLÉMENTATION DU MOUVEMENT DES RAQUETTES POUR L'OPTION "SINGLE PLAYER"
         #
