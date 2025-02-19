@@ -89,6 +89,14 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
         #
         # * Note 3 : Lorsque les raquettes atteignent le haut ou le bas de la fenêtre de jeu, elles ne doivent pas dépasser ces limites. 
         #          Assurez-vous que leur position reste dans les bornes définies par la hauteur de l'écran.
+        if player1_y < 0:
+            player1_y = 0
+        if player1_y > SCREEN_HEIGHT - PADDLE_HEIGHT:
+            player1_y = SCREEN_HEIGHT - PADDLE_HEIGHT
+        if player2_y < 0:
+            player2_y = 0
+        if player2_y > SCREEN_HEIGHT - PADDLE_HEIGHT:
+            player2_y = SCREEN_HEIGHT - PADDLE_HEIGHT
 
         if game_mode == 'multi player':
             if keys[pygame.K_w] and player1_y > 0:
@@ -100,8 +108,7 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
             if keys[pygame.K_DOWN] and player2_y < SCREEN_HEIGHT - PADDLE_HEIGHT:
                 player2_y += paddle_speed
 
-            if paddle_speed > SCREEN_HEIGHT - PADDLE_HEIGHT:
-                paddle_speed = SCREEN_HEIGHT - PADDLE_HEIGHT
+
 
         # TODO : IMPLÉMENTATION DU MOUVEMENT DES RAQUETTES POUR L'OPTION "SINGLE PLAYER"
         #
