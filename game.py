@@ -95,6 +95,7 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
                 player1_y -= paddle_speed 
             if keys[pygame.K_s] and player1_y < SCREEN_HEIGHT - PADDLE_HEIGHT:
                 player1_y += paddle_speed
+
             if keys[pygame.K_UP] and player2_y > 0:
                 player2_y -= paddle_speed
             if keys[pygame.K_DOWN] and player2_y < SCREEN_HEIGHT - PADDLE_HEIGHT:
@@ -135,6 +136,8 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
         #     - Pour le niveau "hard", la vitesse de déplacement de la raquette doit être égale à "paddle_speed"
 
         margin = 20 if random.random() < 0.1 else 40
+
+       
         if ball_y < player2_y + PADDLE_HEIGHT // 2 - margin:
             player2_y -= paddle_speed if difficulty == 'hard' else paddle_speed - 4 if difficulty == 'medium' else paddle_speed - 5
         if ball_y > player2_y + PADDLE_HEIGHT // 2 + margin:
