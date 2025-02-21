@@ -165,10 +165,10 @@ def play_game(player1_y, player2_y, player1_score, player2_score, ball_x, ball_y
         #
         # 2. Vous devez également réinitialiser la balle pour qu'elle réapparaisse dans le jeu à l'aide de la fonction "reset_ball" que vous avez implémenté
 
-        if ball_x < 0:
+        if ball_x <= 0:
             player2_score += 1
             ball_x, ball_y, ball_velocity_x, ball_velocity_y = reset_ball(ball_x, ball_y, ball_velocity_x, ball_velocity_y)
-        if ball_x > SCREEN_WIDTH:
+        if ball_x >= SCREEN_WIDTH:
             player1_score += 1
             ball_x, ball_y, ball_velocity_x, ball_velocity_y = reset_ball(ball_x, ball_y, ball_velocity_x, ball_velocity_y)
 
